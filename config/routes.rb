@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weathers
   resources :users
   get 'static_pages/home'
 

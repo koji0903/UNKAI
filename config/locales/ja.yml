@@ -195,8 +195,36 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      weather: 気象情報
     attributes:
       user:
         name: 名前
         email: メールアドレス
+      weather:
+        area: 地区
+        date: 日付
+        ave_temperature: 平均気温
+        max_temperature: 最高気温
+        min_temperature: 最低気温
+        rainfall: 降水量
+        max_rainfall: 1時間の降水量最大
+        day_length: 日照時間
+        insolation: 合計全天日射量
+        max_snow: 最深積雪
+        total_snow: 降雪量合計
+        ave_wind_speed: 平均風速
+        max_wind_speed: 最大風速
+        max_wind_direction: 最大風速風向
+        momentary_wind_speed: 最大瞬間風速
+        momentary_wind_direction: 最大瞬間風速風向
+        most_direction: 最多風向
+        ave_stream_pressure: 平均蒸気圧
+        ave_humidity: 平均湿度
+        min_himidity: 最小相対湿度
+        ave_pressure: 平均現地気圧
+        ave_sea_pressure: 平均海面気圧
+        min_sea_pressure: 最低海面気圧
+        ave_cloud_amount: 平均雲量
+        outline06_18: 天気概況06_18
+        outline18_06: 天気概況18_06
   site_title: 雲海予報

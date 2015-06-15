@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area: MyString
+  date: 2015-06-15
+  ave_temperature: 1.5
+  max_temperature: 1.5
+  min_temperature: 1.5
+  rainfall: 1.5
+  max_rainfall: 1.5
+  day_length: 1.5
+  insolation: 1.5
+  max_snow: 1.5
+  total_snow: 1.5
+  ave_wind_speed: 1.5
+  max_wind_speed: 1.5
+  max_wind_direction: MyString
+  momentary_wind_speed: 1.5
+  momentary_wind_direction: MyString
+  most_direction: MyString
+  ave_stream_pressure: 1.5
+  ave_humidity: 1
+  min_himidity: 1
+  ave_pressure: 1.5
+  ave_sea_pressure: 1.5
+  min_sea_pressure: 1.5
+  ave_cloud_amount: 1.5
+  outline06_18: MyText
+  outline18_06: MyText
+
+two:
+  area: MyString
+  date: 2015-06-15
+  ave_temperature: 1.5
+  max_temperature: 1.5
+  min_temperature: 1.5
+  rainfall: 1.5
+  max_rainfall: 1.5
+  day_length: 1.5
+  insolation: 1.5
+  max_snow: 1.5
+  total_snow: 1.5
+  ave_wind_speed: 1.5
+  max_wind_speed: 1.5
+  max_wind_direction: MyString
+  momentary_wind_speed: 1.5
+  momentary_wind_direction: MyString
+  most_direction: MyString
+  ave_stream_pressure: 1.5
+  ave_humidity: 1
+  min_himidity: 1
+  ave_pressure: 1.5
+  ave_sea_pressure: 1.5
+  min_sea_pressure: 1.5
+  ave_cloud_amount: 1.5
+  outline06_18: MyText
+  outline18_06: MyText

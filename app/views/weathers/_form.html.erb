@@ -1,0 +1,58 @@
+<%= simple_form_for @weather, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :area %>
+  <%= error_span(@weather[:area]) %>
+  <%= f.input :date %>
+  <%= error_span(@weather[:date]) %>
+  <%= f.input :ave_temperature %>
+  <%= error_span(@weather[:ave_temperature]) %>
+  <%= f.input :max_temperature %>
+  <%= error_span(@weather[:max_temperature]) %>
+  <%= f.input :min_temperature %>
+  <%= error_span(@weather[:min_temperature]) %>
+  <%= f.input :rainfall %>
+  <%= error_span(@weather[:rainfall]) %>
+  <%= f.input :max_rainfall %>
+  <%= error_span(@weather[:max_rainfall]) %>
+  <%= f.input :day_length %>
+  <%= error_span(@weather[:day_length]) %>
+  <%= f.input :insolation %>
+  <%= error_span(@weather[:insolation]) %>
+  <%= f.input :max_snow %>
+  <%= error_span(@weather[:max_snow]) %>
+  <%= f.input :total_snow %>
+  <%= error_span(@weather[:total_snow]) %>
+  <%= f.input :ave_wind_speed %>
+  <%= error_span(@weather[:ave_wind_speed]) %>
+  <%= f.input :max_wind_speed %>
+  <%= error_span(@weather[:max_wind_speed]) %>
+  <%= f.input :max_wind_direction %>
+  <%= error_span(@weather[:max_wind_direction]) %>
+  <%= f.input :momentary_wind_speed %>
+  <%= error_span(@weather[:momentary_wind_speed]) %>
+  <%= f.input :momentary_wind_direction %>
+  <%= error_span(@weather[:momentary_wind_direction]) %>
+  <%= f.input :most_direction %>
+  <%= error_span(@weather[:most_direction]) %>
+  <%= f.input :ave_stream_pressure %>
+  <%= error_span(@weather[:ave_stream_pressure]) %>
+  <%= f.input :ave_humidity %>
+  <%= error_span(@weather[:ave_humidity]) %>
+  <%= f.input :min_himidity %>
+  <%= error_span(@weather[:min_himidity]) %>
+  <%= f.input :ave_pressure %>
+  <%= error_span(@weather[:ave_pressure]) %>
+  <%= f.input :ave_sea_pressure %>
+  <%= error_span(@weather[:ave_sea_pressure]) %>
+  <%= f.input :min_sea_pressure %>
+  <%= error_span(@weather[:min_sea_pressure]) %>
+  <%= f.input :ave_cloud_amount %>
+  <%= error_span(@weather[:ave_cloud_amount]) %>
+  <%= f.input :outline06_18 %>
+  <%= error_span(@weather[:outline06_18]) %>
+  <%= f.input :outline18_06 %>
+  <%= error_span(@weather[:outline18_06]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                weathers_path, :class => 'btn btn-default' %>
+<% end %>

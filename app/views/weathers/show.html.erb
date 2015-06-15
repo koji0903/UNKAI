@@ -1,0 +1,69 @@
+<%- model_class = Weather -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:area) %>:</strong></dt>
+  <dd><%= @weather.area %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= @weather.date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ave_temperature) %>:</strong></dt>
+  <dd><%= @weather.ave_temperature %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:max_temperature) %>:</strong></dt>
+  <dd><%= @weather.max_temperature %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:min_temperature) %>:</strong></dt>
+  <dd><%= @weather.min_temperature %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rainfall) %>:</strong></dt>
+  <dd><%= @weather.rainfall %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:max_rainfall) %>:</strong></dt>
+  <dd><%= @weather.max_rainfall %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:day_length) %>:</strong></dt>
+  <dd><%= @weather.day_length %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:insolation) %>:</strong></dt>
+  <dd><%= @weather.insolation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:max_snow) %>:</strong></dt>
+  <dd><%= @weather.max_snow %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:total_snow) %>:</strong></dt>
+  <dd><%= @weather.total_snow %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ave_wind_speed) %>:</strong></dt>
+  <dd><%= @weather.ave_wind_speed %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:max_wind_speed) %>:</strong></dt>
+  <dd><%= @weather.max_wind_speed %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:max_wind_direction) %>:</strong></dt>
+  <dd><%= @weather.max_wind_direction %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:momentary_wind_speed) %>:</strong></dt>
+  <dd><%= @weather.momentary_wind_speed %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:momentary_wind_direction) %>:</strong></dt>
+  <dd><%= @weather.momentary_wind_direction %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:most_direction) %>:</strong></dt>
+  <dd><%= @weather.most_direction %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ave_stream_pressure) %>:</strong></dt>
+  <dd><%= @weather.ave_stream_pressure %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ave_humidity) %>:</strong></dt>
+  <dd><%= @weather.ave_humidity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:min_himidity) %>:</strong></dt>
+  <dd><%= @weather.min_himidity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ave_pressure) %>:</strong></dt>
+  <dd><%= @weather.ave_pressure %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ave_sea_pressure) %>:</strong></dt>
+  <dd><%= @weather.ave_sea_pressure %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:min_sea_pressure) %>:</strong></dt>
+  <dd><%= @weather.min_sea_pressure %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ave_cloud_amount) %>:</strong></dt>
+  <dd><%= @weather.ave_cloud_amount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:outline06_18) %>:</strong></dt>
+  <dd><%= @weather.outline06_18 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:outline18_06) %>:</strong></dt>
+  <dd><%= @weather.outline18_06 %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              weathers_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_weather_path(@weather), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              weather_path(@weather),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
