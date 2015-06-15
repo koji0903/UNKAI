@@ -7,6 +7,51 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+
+			<div class="container-fluid">
+				<!-- 2. ナビゲーションのヘッダ部分の定義 -->
+				<div class="navbar-header">
+				<!-- 3. サイト名とメニューが折りたたまれた時のトグルボタンを定義 -->
+			 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">雲海予想</a>
+				</div>
+				<!-- 4. 実際のメニュー部分を記述する -->
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">気象情報</a></li>
+						<li><a href="#">ユーザー</a></li>
+			              <!-- <li><a href="#">Link</a></li> -->
+<!-- 			              <li class="dropdown">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+			                <ul class="dropdown-menu" role="menu">
+			                  <li><a href="#">Action</a></li>
+			                  <li><a href="#">Another action</a></li>
+			                  <li><a href="#">Something else here</a></li>
+			                  <li class="divider"></li>
+			                  <li class="dropdown-header">Nav header</li>
+			                  <li><a href="#">Separated link</a></li>
+			                  <li><a href="#">One more separated link</a></li>
+			                </ul>
+			              </li>
+ -->
+ 					</ul>
+					<!-- 5. 右寄せの指定 -->
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="./">管理</a></li>
+						<li><a href="../navbar-static-top/">管理者ログイン</a></li>
+						<li><a href="../navbar-fixed-top/">設定</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</div>
+	</nav>
 	<div class="container">
 
 	<% flash.each do |name, msg| %>
