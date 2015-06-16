@@ -1,3 +1,12 @@
 // Place all the styles related to the weathers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wether-item ul {
+  font-size: 0;
+}
+.wether-item li {
+  background-color: #ffffff;
+  display: inline-block;
+  font-size: 12px;
+  width: 25%;
+}

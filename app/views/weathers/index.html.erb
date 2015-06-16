@@ -5,7 +5,8 @@
 
 <h2>過去の気象情報</h2>
 <p>気象情報は、<a href="http://www.data.jma.go.jp/gmd/risk/obsdl/index.php" target="_blank">気象庁</a>から取得しています。</p>
-<p>取得情報高項目</p>
+<p>取得情報項目</p>
+<div class="wether-item">
 <ul>
   <li>地区</li>
   <li>日付</li>
@@ -34,6 +35,7 @@
   <li>天気概況（06時〜18時）</li>
   <li>天気概況（18時〜06時）</li>
 </ul>
+</div>
 
 <h2>気象情報一覧</h2>
 <%= page_entries_info(@weathers) %>
