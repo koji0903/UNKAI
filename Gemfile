@@ -50,3 +50,6 @@ gem 'twitter-bootstrap-rails' # Bootstrapの本体
 
 # simple form
 gem 'simple_form'
+
+# Page Nation
+gem 'kaminari'

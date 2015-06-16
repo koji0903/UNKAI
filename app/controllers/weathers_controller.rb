@@ -5,7 +5,8 @@ class WeathersController < ApplicationController
   # GET /weathers.json
   def index
 #    @weathers = Weather.all
-    @weathers = Weather.order("date")
+    @weathers = Weather.page(params[:page]).order("date")
+#    @weathers = Weather.order("date")
   end
 
   # GET /weathers/1

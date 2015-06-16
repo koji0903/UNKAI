@@ -36,72 +36,73 @@
 </ul>
 
 <h2>気象情報一覧</h2>
+<%= page_entries_info(@weathers) %>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:area) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:area) %></th> -->
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:ave_temperature) %></th>
       <th><%= model_class.human_attribute_name(:max_temperature) %></th>
       <th><%= model_class.human_attribute_name(:min_temperature) %></th>
       <th><%= model_class.human_attribute_name(:rainfall) %></th>
-      <th><%= model_class.human_attribute_name(:max_rainfall) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:max_rainfall) %></th> -->
       <th><%= model_class.human_attribute_name(:day_length) %></th>
-      <th><%= model_class.human_attribute_name(:insolation) %></th>
-      <th><%= model_class.human_attribute_name(:max_snow) %></th>
-      <th><%= model_class.human_attribute_name(:total_snow) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:insolation) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:max_snow) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:total_snow) %></th> -->
       <th><%= model_class.human_attribute_name(:ave_wind_speed) %></th>
       <th><%= model_class.human_attribute_name(:max_wind_speed) %></th>
       <th><%= model_class.human_attribute_name(:max_wind_direction) %></th>
-      <th><%= model_class.human_attribute_name(:momentary_wind_speed) %></th>
-      <th><%= model_class.human_attribute_name(:momentary_wind_direction) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:momentary_wind_speed) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:momentary_wind_direction) %></th> -->
       <th><%= model_class.human_attribute_name(:most_direction) %></th>
       <th><%= model_class.human_attribute_name(:ave_stream_pressure) %></th>
       <th><%= model_class.human_attribute_name(:ave_humidity) %></th>
       <th><%= model_class.human_attribute_name(:min_himidity) %></th>
       <th><%= model_class.human_attribute_name(:ave_pressure) %></th>
-      <th><%= model_class.human_attribute_name(:ave_sea_pressure) %></th>
-      <th><%= model_class.human_attribute_name(:min_sea_pressure) %></th>
-      <th><%= model_class.human_attribute_name(:ave_cloud_amount) %></th>
-      <th><%= model_class.human_attribute_name(:outline06_18) %></th>
-      <th><%= model_class.human_attribute_name(:outline18_06) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <!-- <th><%= model_class.human_attribute_name(:ave_sea_pressure) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:min_sea_pressure) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:ave_cloud_amount) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:outline06_18) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:outline18_06) %></th> -->
+      <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
+      <!-- <th><%=t '.actions', :default => t("helpers.actions") %></th> -->
     </tr>
   </thead>
   <tbody>
     <% @weathers.each do |weather| %>
       <tr>
-        <td><%= link_to weather.id, weather_path(weather) %></td>
-        <td><%= weather.area %></td>
+        <!-- <td><%= link_to weather.id, weather_path(weather) %></td> -->
+        <!-- <td><%= weather.area %></td> -->
         <td><%= weather.date %></td>
         <td><%= weather.ave_temperature %></td>
         <td><%= weather.max_temperature %></td>
         <td><%= weather.min_temperature %></td>
         <td><%= weather.rainfall %></td>
-        <td><%= weather.max_rainfall %></td>
+        <!-- <td><%= weather.max_rainfall %></td> -->
         <td><%= weather.day_length %></td>
-        <td><%= weather.insolation %></td>
-        <td><%= weather.max_snow %></td>
-        <td><%= weather.total_snow %></td>
+        <!-- <td><%= weather.insolation %></td> -->
+        <!-- <td><%= weather.max_snow %></td> -->
+        <!-- <td><%= weather.total_snow %></td> -->
         <td><%= weather.ave_wind_speed %></td>
         <td><%= weather.max_wind_speed %></td>
         <td><%= weather.max_wind_direction %></td>
-        <td><%= weather.momentary_wind_speed %></td>
-        <td><%= weather.momentary_wind_direction %></td>
+        <!-- <td><%= weather.momentary_wind_speed %></td> -->
+        <!-- <td><%= weather.momentary_wind_direction %></td> -->
         <td><%= weather.most_direction %></td>
         <td><%= weather.ave_stream_pressure%></td>
         <td><%= weather.ave_humidity %></td>
         <td><%= weather.min_himidity %></td>
         <td><%= weather.ave_pressure %></td>
-        <td><%= weather.ave_sea_pressure %></td>
-        <td><%= weather.min_sea_pressure %></td>
-        <td><%= weather.ave_cloud_amount %></td>
-        <td><%= weather.outline06_18 %></td>
-        <td><%= weather.outline18_06 %></td>
-        <td><%=l weather.created_at %></td>
-        <td>
+        <!-- <td><%= weather.ave_sea_pressure %></td> -->
+        <!-- <td><%= weather.min_sea_pressure %></td> -->
+        <!-- <td><%= weather.ave_cloud_amount %></td> -->
+        <!-- <td><%= weather.outline06_18 %></td> -->
+        <!-- <td><%= weather.outline18_06 %></td> -->
+        <!-- <td><%=l weather.created_at %></td> -->
+<!--         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_weather_path(weather), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -110,11 +111,15 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
-      </tr>
+ -->      </tr>
     <% end %>
   </tbody>
 </table>
 
+<%= paginate @weathers %>
+<br>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_weather_path,
             :class => 'btn btn-primary' %>
+
