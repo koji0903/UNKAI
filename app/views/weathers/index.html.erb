@@ -2,6 +2,40 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+
+<h2>過去の気象情報</h2>
+<p>気象情報は、<a href="http://www.data.jma.go.jp/gmd/risk/obsdl/index.php" target="_blank">気象庁</a>から取得しています。</p>
+<p>取得情報高項目</p>
+<ul>
+  <li>地区</li>
+  <li>日付</li>
+  <li>平均気温[℃]</li>
+  <li>最高気温[℃]</li>
+  <li>最低気温[℃]</li>
+  <li>降水量[mm]</li>
+  <li>1時間降水量の最大[mm]</li>
+  <li>日照時間[h]</li>
+  <li>合計全天日射量[Mj/m2]</li>
+  <li>最深積雪[cm]</li>
+  <li>降雪量合計[cm]</li>
+  <li>平均風速</li>
+  <li>最大風速[m/s]</li>
+  <li>最大風速風向</li>
+  <li>最大瞬間風速[m/s]</li>
+  <li>最大瞬間風速風向</li>
+  <li>最多風向</li>
+  <li>平均蒸気圧[hPa]</li>
+  <li>平均湿度[%]</li>
+  <li>最小相対湿度[%]</li>
+  <li>平均現地気圧[hPa]</li>
+  <li>平均海面気圧[hPa]</li>
+  <li>最低海面気圧[hPa]</li>
+  <li>平均雲量</li>
+  <li>天気概況（06時〜18時）</li>
+  <li>天気概況（18時〜06時）</li>
+</ul>
+
+<h2>気象情報一覧</h2>
 <table class="table table-striped">
   <thead>
     <tr>
