@@ -1,8 +1,8 @@
 class CreateWeathers < ActiveRecord::Migration
   def change
     create_table :weathers do |t|
-      t.string :area
-      t.date :date
+      t.string :area, :null => false
+      t.date :date, :null => false
       t.float :ave_temperature
       t.float :max_temperature
       t.float :min_temperature
@@ -29,6 +29,8 @@ class CreateWeathers < ActiveRecord::Migration
       t.text :outline18_06
 
       t.timestamps null: false
+
+      t.index [:area, :date], :unique => true
     end
   end
 end

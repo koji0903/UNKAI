@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150615144314) do
   end
 
   create_table "weathers", force: :cascade do |t|
-    t.string   "area"
-    t.date     "date"
+    t.string   "area",                     null: false
+    t.date     "date",                     null: false
     t.float    "ave_temperature"
     t.float    "max_temperature"
     t.float    "min_temperature"
@@ -50,5 +50,7 @@ ActiveRecord::Schema.define(version: 20150615144314) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  add_index "weathers", ["area", "date"], name: "index_weathers_on_area_and_date", unique: true
 
 end
