@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+#  get 'top/index'
+  root to: 'top#index'
+
   resources :weathers
   resources :users
   get 'static_pages/home'
