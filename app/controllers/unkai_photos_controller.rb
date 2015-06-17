@@ -4,7 +4,8 @@ class UnkaiPhotosController < ApplicationController
   # GET /unkai_photos
   # GET /unkai_photos.json
   def index
-    @unkai_photos = UnkaiPhoto.all
+#    @unkai_photos = UnkaiPhoto.all
+    @unkai_photos = UnkaiPhoto.order("date")
   end
 
   # GET /unkai_photos/1

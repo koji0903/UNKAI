@@ -196,6 +196,7 @@ ja:
     models:
       user: ユーザー
       weather: 気象情報
+      unkai_photo: 雲海ギャラリー
     attributes:
       user:
         name: 名前
@@ -227,6 +228,10 @@ ja:
         ave_cloud_amount: 平均雲量
         outline06_18: 天気概況06_18
         outline18_06: 天気概況18_06
+      unkai_photo:
+        comment: コメント
+        date: 撮影日
+        unkai_photo: 写真
   site_title: 雲海予報
   views:
     pagination:
