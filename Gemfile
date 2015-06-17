@@ -57,3 +57,10 @@ gem 'kaminari'
 # Galarry
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
+
+# calendar
+gem 'momentjs-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap3-datetimepicker-rails'
+
+gem 'jquery-turbolinks'
