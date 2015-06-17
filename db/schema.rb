@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615144314) do
+ActiveRecord::Schema.define(version: 20150617003139) do
+
+  create_table "unkai_photos", force: :cascade do |t|
+    t.text     "comment"
+    t.date     "date",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -53,3 +53,6 @@ gem 'simple_form'
 
 # Page Nation
 gem 'kaminari'
+
+# Galarry
+gem 'carrierwave'

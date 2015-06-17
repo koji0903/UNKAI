@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :unkai_photos
 #  get 'top/index'
   root to: 'top#index'
 

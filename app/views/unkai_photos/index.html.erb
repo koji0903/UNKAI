@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Unkai Photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unkai_photos.each do |unkai_photo| %>
+      <tr>
+        <td><%= unkai_photo.comment %></td>
+        <td><%= unkai_photo.date %></td>
+        <td><%= link_to 'Show', unkai_photo %></td>
+        <td><%= link_to 'Edit', edit_unkai_photo_path(unkai_photo) %></td>
+        <td><%= link_to 'Destroy', unkai_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unkai photo', new_unkai_photo_path %>

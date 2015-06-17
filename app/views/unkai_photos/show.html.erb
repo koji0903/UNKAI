@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @unkai_photo.image? %>
+  	<div class="thumbnail">
+		<%= image_tag @unkai_photo.image.url %>
+  	</div>
+  <% end %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @unkai_photo.comment %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @unkai_photo.date %>
+</p>
+
+<%= link_to 'Edit', edit_unkai_photo_path(@unkai_photo) %> |
+<%= link_to 'Back', unkai_photos_path %>
