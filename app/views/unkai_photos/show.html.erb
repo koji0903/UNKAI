@@ -21,6 +21,152 @@
 
 </dl>
 
+<h2>気象情報</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+    　<td>項目</td>
+    　<td>前日</td>
+    　<td>当日</td>
+    </tr>
+  </thead>
+  <tbody>
+<!--     <tr>
+      <td>地区</td>
+      <td><%= @unkai_photo.y_area %></td>
+      <td><%= @unkai_photo.t_area %></td>
+    </tr>
+    <tr>
+      <td>地区</td>
+      <td><%= @unkai_photo.y_date %></td>
+      <td><%= @unkai_photo.t_date %></td>
+    </tr>
+ -->
+    <tr>
+      <td>平均気温</td>
+      <td><%= @unkai_photo.y_ave_temperature %></td>
+      <td><%= @unkai_photo.t_ave_temperature %></td>
+    </tr>
+    <tr>
+      <td>最高気温</td>
+      <td><%= @unkai_photo.y_max_temperature %></td>
+      <td><%= @unkai_photo.t_max_temperature %></td>
+    </tr>
+    <tr>
+      <td>最低気温</td>
+      <td><%= @unkai_photo.y_min_temperature %></td>
+      <td><%= @unkai_photo.t_min_temperature %></td>
+    </tr>
+    <tr>
+      <td>降水量</td>
+      <td><%= @unkai_photo.y_rainfall %></td>
+      <td><%= @unkai_photo.t_rainfall %></td>
+    </tr>
+    <tr>
+      <td>1時間の降水量最大</td>
+      <td><%= @unkai_photo.y_max_rainfall %></td>
+      <td><%= @unkai_photo.t_max_rainfall %></td>
+    </tr>
+    <tr>
+      <td>日照時間</td>
+      <td><%= @unkai_photo.y_day_length %></td>
+      <td><%= @unkai_photo.t_day_length %></td>
+    </tr>
+    <tr>
+      <td>合計全天日射量</td>
+      <td><%= @unkai_photo.y_insolation %></td>
+      <td><%= @unkai_photo.t_insolation %></td>
+    </tr>
+    <tr>
+      <td>最深積雪</td>
+      <td><%= @unkai_photo.y_max_snow %></td>
+      <td><%= @unkai_photo.t_max_snow %></td>
+    </tr>
+    <tr>
+      <td>降雪量合計</td>
+      <td><%= @unkai_photo.y_total_snow %></td>
+      <td><%= @unkai_photo.t_total_snow %></td>
+    </tr>
+    <tr>
+      <td>平均風速</td>
+      <td><%= @unkai_photo.y_ave_wind_speed %></td>
+      <td><%= @unkai_photo.t_ave_wind_speed %></td>
+    </tr>
+    <tr>
+      <td>最大風速</td>
+      <td><%= @unkai_photo.y_max_wind_speed %></td>
+      <td><%= @unkai_photo.t_max_wind_speed %></td>
+    </tr>
+    <tr>
+      <td>最大風速風向</td>
+      <td><%= @unkai_photo.y_max_wind_direction %></td>
+      <td><%= @unkai_photo.t_max_wind_direction %></td>
+    </tr>
+    <tr>
+      <td>最大瞬間風速</td>
+      <td><%= @unkai_photo.y_momentary_wind_speed %></td>
+      <td><%= @unkai_photo.t_momentary_wind_speed %></td>
+    </tr>
+    <tr>
+      <td>最大瞬間風速風向</td>
+      <td><%= @unkai_photo.y_momentary_wind_direction %></td>
+      <td><%= @unkai_photo.t_momentary_wind_direction %></td>
+    </tr>
+    <tr>
+      <td>最多風向</td>
+      <td><%= @unkai_photo.y_most_direction %></td>
+      <td><%= @unkai_photo.t_most_direction %></td>
+    </tr>
+    <tr>
+      <td>平均蒸気圧</td>
+      <td><%= @unkai_photo.y_ave_stream_pressure %></td>
+      <td><%= @unkai_photo.t_ave_stream_pressure %></td>
+    </tr>
+    <tr>
+      <td>平均湿度</td>
+      <td><%= @unkai_photo.y_ave_humidity %></td>
+      <td><%= @unkai_photo.t_ave_humidity %></td>
+    </tr>
+    <tr>
+      <td>最小相対湿度</td>
+      <td><%= @unkai_photo.y_min_himidity %></td>
+      <td><%= @unkai_photo.t_min_himidity %></td>
+    </tr>
+    <tr>
+      <td>平均現地気圧</td>
+      <td><%= @unkai_photo.y_ave_pressure %></td>
+      <td><%= @unkai_photo.t_ave_pressure %></td>
+    </tr>
+    <tr>
+      <td>平均海面気圧</td>
+      <td><%= @unkai_photo.y_ave_sea_pressure %></td>
+      <td><%= @unkai_photo.t_ave_sea_pressure %></td>
+    </tr>
+    <tr>
+      <td>最低海面気圧</td>
+      <td><%= @unkai_photo.y_min_sea_pressure %></td>
+      <td><%= @unkai_photo.t_min_sea_pressure %></td>
+    </tr>
+    <tr>
+      <td>平均雲量</td>
+      <td><%= @unkai_photo.y_ave_cloud_amount %></td>
+      <td><%= @unkai_photo.t_ave_cloud_amount %></td>
+    </tr>
+    <tr>
+      <td>天気概況06_18</td>
+      <td><%= @unkai_photo.y_outline06_18 %></td>
+      <td><%= @unkai_photo.t_outline06_18 %></td>
+    </tr>
+    <tr>
+      <td>天気概況18_06</td>
+      <td><%= @unkai_photo.y_outline18_06 %></td>
+      <td><%= @unkai_photo.t_outline18_06 %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
               unkai_photos_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
