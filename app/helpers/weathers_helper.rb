@@ -1,16 +1,17 @@
 # coding: utf-8
 
+#
+# 気象データを取得するクラス
+#   取得元：気象庁 http://www.data.jma.go.jp/gmd/risk/obsdl/index.php
+#
+#  CSV  ファイル：nkf -w -Lu --overwrite *.csv
 module WeathersHelper
 
+	require 'csv'
+	require 'kconv'
 
-	#
-	# 気象データを取得するクラス
-	#   取得元：気象庁 http://www.data.jma.go.jp/gmd/risk/obsdl/index.php
-	#
-	#  CSV  ファイル：nkf -w -Lu --overwrite *.csv
+	# MontylyData
 	class ParseWheatherData
-		require 'csv'
-		require 'kconv'
 
 		attr_accessor :dir, :csvFiles
 		# dir : Directory that save csv file
@@ -106,9 +107,9 @@ end
 
 if __FILE__ == $0
 	require 'pp'
-	obj = WeathersHelper::ParseWheatherData.new('../../vendor/weather_data/')
+	obj = WeathersHelper::ParseWheatherData.new('../../public/weather_data/daily')
 	data = obj.main
 	data.each do |elem|
-		p elem.area
+		p elem.data
 	end
 end
