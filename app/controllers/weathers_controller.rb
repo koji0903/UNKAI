@@ -19,7 +19,7 @@ class WeathersController < ApplicationController
     @weather = Weather.new
 
     # CSVファイルの読み込み
-    @parse_weather_data = WeathersHelper::ParseWheatherData.new("vendor/weather_data")
+    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/monthly")
     @weather_data = @parse_weather_data.main
   end
 
@@ -31,7 +31,7 @@ class WeathersController < ApplicationController
   # POST /weathers.json
   def create
 #    @weather = Weather.new(weather_params)
-    @parse_weather_data = WeathersHelper::ParseWheatherData.new("vendor/weather_data")
+    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/monthly")
     @weather_data = @parse_weather_data.main
 
     @weather_data.each do |w|
