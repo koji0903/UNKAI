@@ -110,6 +110,7 @@ if __FILE__ == $0
 	obj = WeathersHelper::ParseWheatherData.new('../../public/weather_data/daily')
 	data = obj.main
 	data.each do |elem|
-		p elem.data
+		p elem.data[0][0].split
+		exit
 	end
 end

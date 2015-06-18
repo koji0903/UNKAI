@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617003139) do
+ActiveRecord::Schema.define(version: 20150618063243) do
 
   create_table "unkai_photos", force: :cascade do |t|
     t.text     "comment"
@@ -27,6 +27,27 @@ ActiveRecord::Schema.define(version: 20150617003139) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "weather_hours", force: :cascade do |t|
+    t.string   "area",            null: false
+    t.date     "date",            null: false
+    t.datetime "date_time",       null: false
+    t.float    "temperature"
+    t.float    "wind_speed"
+    t.string   "wind_direction"
+    t.float    "railfall"
+    t.float    "snow"
+    t.float    "day_length"
+    t.float    "insolation"
+    t.float    "pressure"
+    t.float    "sea_pressure"
+    t.integer  "humidity"
+    t.float    "stream_pressure"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "weather_hours", ["area", "date", "date_time"], name: "index_weather_hours_on_area_and_date_and_date_time", unique: true
 
   create_table "weathers", force: :cascade do |t|
     t.string   "area",                     null: false

@@ -19,8 +19,13 @@ class WeathersController < ApplicationController
     @weather = Weather.new
 
     # CSVファイルの読み込み
-    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/monthly")
+
+    # Montly
+    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/daily")
     @weather_data = @parse_weather_data.main
+    # Daily
+    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/hourly")
+    @weather_data += @parse_weather_data.main
   end
 
   # GET /weathers/1/edit
@@ -31,7 +36,9 @@ class WeathersController < ApplicationController
   # POST /weathers.json
   def create
 #    @weather = Weather.new(weather_params)
-    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/monthly")
+
+	# Montyレポートの取得
+    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/daily")
     @weather_data = @parse_weather_data.main
 
     @weather_data.each do |w|
@@ -68,7 +75,31 @@ class WeathersController < ApplicationController
       end
     end unless @weather_data.nil?
 
+    # Dailyレポートの取得
+    @parse_weather_data = WeathersHelper::ParseWheatherData.new("public/weather_data/hourly")
+    @weather_data = @parse_weather_data.main
 
+    @weather_data.each do |w|
+      w.data.each do |line|
+        @weather_hours = WeatherHours.new(
+           :area => w.area,
+           :date => line[0].split[0],
+           :date_time => line[0],
+           :temperature => line[1],
+           :wind_speed => line[4],
+           :wind_direction => line[6],
+           :railfall => line[9],
+           :snow => line[13],
+           :day_length => line[21],
+           :insolation => line[25],
+           :pressure => line[28],
+           :sea_pressure => line[31],
+           :humidity => line[34],
+           :stream_pressure => line[37],
+          )
+        @weather_hours.save
+      end
+    end unless @weather_data.nil?
 
     respond_to do |format|
       format.html { redirect_to @weather, notice: 'Weather was successfully created.' }

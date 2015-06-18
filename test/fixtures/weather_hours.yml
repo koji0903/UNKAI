@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area: MyString
+  date: 2015-06-18
+  date_time: 2015-06-18 15:32:43
+  temperature: 1.5
+  wind_speed: 1.5
+  wind_direction: MyString
+  railfall: 1.5
+  snow: 1.5
+  day_length: 1.5
+  insolation: 1.5
+  pressure: 1.5
+  sea_pressure: 1.5
+  humidity: 1
+  stream_pressure: 1.5
+
+two:
+  area: MyString
+  date: 2015-06-18
+  date_time: 2015-06-18 15:32:43
+  temperature: 1.5
+  wind_speed: 1.5
+  wind_direction: MyString
+  railfall: 1.5
+  snow: 1.5
+  day_length: 1.5
+  insolation: 1.5
+  pressure: 1.5
+  sea_pressure: 1.5
+  humidity: 1
+  stream_pressure: 1.5
