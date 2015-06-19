@@ -1,3 +1,8 @@
+<% content_for :graph do %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<% end %>
+
+
 <%- model_class = UnkaiPhoto -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
@@ -21,7 +26,80 @@
 
 </dl>
 
-<h2>気象情報</h2>
+
+<%= line_chart @temperature,
+  :library => {
+    :title => "前日〜当日（９時）までの時間後毎気温の変化",
+    :hAxis => {
+      :title => "時間"
+    },
+    :vAxis => {
+      :title => "気温[℃]"
+    },
+  }
+%>
+
+<%= line_chart @wind_speed,
+  :library => {
+    :title => "前日〜当日（９時）までの風速の変化",
+    :hAxis => {
+      :title => "時間"
+    },
+    :vAxis => {
+      :title => "風速[m/s]"
+    },
+  }
+%>
+
+
+<%= line_chart @railfall,
+  :library => {
+    :title => "前日〜当日（９時）までの降水量の変化",
+    :hAxis => {
+      :title => "時間"
+    },
+    :vAxis => {
+      :title => "降水量[mm]"
+    },
+  }
+%>
+
+<%= line_chart @pressure,
+  :library => {
+    :title => "前日〜当日（９時）までの気圧の変化",
+    :hAxis => {
+      :title => "時間"
+    },
+    :vAxis => {
+      :title => "気圧[hPa]"
+    },
+  }
+%>
+
+<%= line_chart @humidity,
+  :library => {
+    :title => "前日〜当日（９時）までの相対湿度の変化",
+    :hAxis => {
+      :title => "時間"
+    },
+    :vAxis => {
+      :title => "湿度[%]"
+    },
+  }
+%>
+
+<%= line_chart @stream_pressure,
+  :library => {
+    :title => "前日〜当日（９時）までの蒸気圧の変化",
+    :hAxis => {
+      :title => "時間"
+    },
+    :vAxis => {
+      :title => "蒸気圧[hPa]"
+    },
+  }
+%>
+
 <table class="table table-striped">
   <thead>
     <tr>
