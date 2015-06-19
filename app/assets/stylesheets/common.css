@@ -83,6 +83,7 @@ body{
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
 	        background-size: cover;
+	background-position: center;
 	position: absolute !important;
 	background-color: #000;
 }
@@ -167,7 +168,7 @@ section.wrapper{
 }
 
 .table-responsive table{
-	margin-top: 40px;
+	margin-top: 10px;
 }
 
 .table-responsive table,.table-responsive table tr,.table-responsive table td,.table-responsive table th{
@@ -187,8 +188,14 @@ section.wrapper{
 	border: 1px solid #ccc;
 	padding: 10px;
 	overflow: hidden;
+	margin-bottom: 40px;
 }
 
 .wether-item li{
 	background: none;
+}
+
+h2{
+	font-size: 200%;
+	margin-bottom: 5px;
 }
