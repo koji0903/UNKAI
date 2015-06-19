@@ -6,7 +6,10 @@
 ## 使用環境
 
 Ruby ver2.1.5
+
 Rails ver4.2.1
+
+SQLite,ImageMagick
 
 ## 環境移植方法
 
