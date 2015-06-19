@@ -30,6 +30,11 @@ Rails ver4.2.1
 
 を実行して、出力されたキーを、”SECRET_KEY_BASE”環境変数にセット（.bash_profileとかに）
 
+* アセットパイプライン
+
+`$./bin/rake assets:precompile`
+
+
 
 ## 起動
 
