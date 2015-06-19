@@ -14,3 +14,7 @@
  *= require_self
  *= require bootstrap-datetimepicker
  */
+
+h1{
+	display: none !important;
+}

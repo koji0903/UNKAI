@@ -7868,6 +7868,10 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+/* line 5, /var/www/html/hijikuro/UNKAI/app/assets/stylesheets/top.scss */
+h1 {
+  display: none !important;
+}
 /* line 4, /var/www/html/hijikuro/UNKAI/app/assets/stylesheets/weathers.scss */
 .wether-item ul {
   font-size: 0;
@@ -7897,6 +7901,10 @@ div.field, div.actions {
 
  */
 
+
+h1{
+	display: none !important;
+}
 /*!
  * Datetimepicker for Bootstrap 3
  * ! version : 4.7.14
@@ -8263,36 +8271,4 @@ div.field, div.actions {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-
-/* iwatch */
-
-body{
-background: url(images/bg.jpg) no-repeat;
--webkit-background-size: cover;
-     -o-background-size: cover;
-        background-size: cover;
-}
-
-h1#logo{
-  width: 896px;
-  height: 665px;
-  margin: 0 auto;
-  text-indent: -9999px;
-  background: url(images/logo.png) 0 300px no-repeat;
-}
-
-footer{
-  position: absolute;
-  bottom:0
-}
-
-footer p{
-  font-weight: bold;
-  color: #FFF;
-}
-
-.sidebar-nav{
-  display: none;
 }
