@@ -5,7 +5,7 @@ class UnkaiPhotosController < ApplicationController
   # GET /unkai_photos.json
   def index
 #    @unkai_photos = UnkaiPhoto.all
-    @unkai_photos = UnkaiPhoto.order("date")
+    @unkai_photos = UnkaiPhoto.page(params[:page]).order("date")
 #    sql = "select u.date as date, u.comment, u.id, u.image, u.created_at as created_at from unkai_photos as u left join weathers as w1 on ( u.date = w1.date ) left join weathers as w2 on ( date(u.date, '-1 days') = w2.date )"
 #    @unkai_photos = UnkaiPhoto.find_by_sql(sql)
   end
