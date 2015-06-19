@@ -5,6 +5,8 @@
 
 写真提供元：<a href="http://www.aso-domannaka.com/unkaiGallery/unkaitop.html">阿蘇どまんなか局</a>
 
+<%= page_entries_info(@unkai_photos) %>
+<div class="table-responsive">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -43,6 +45,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
+<%= paginate @unkai_photos %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_unkai_photo_path,
