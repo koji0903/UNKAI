@@ -13,6 +13,7 @@ Rails ver4.2.1
 * データをコピーする
 
 `$git clone git@github.com:koji0903/UNKAI.git`
+
 `$cd UNKAI`
 
 * Gemパッケージインストール
