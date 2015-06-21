@@ -139,7 +139,7 @@ h1{
 }
 
 h1#logo{
-	padding-top: 100px;
+	padding-top: 10%;
 	width: 50%;
 	text-align: center;
 	margin: 0 auto;
@@ -159,24 +159,25 @@ footer p{
 }
 
 section.wrapper{
-	overflow: hidden;
-	width: 80%;
-	margin: 0 auto;
-	padding: 20px;
-	background: rgba(255,255,255,0.8);
-	margin-bottom: 80px;
+	overflow: hidden !important;
+	width: 80% !important;
+	margin: 0 auto !important;
+	padding: 20px !important;
+	background: rgba(255,255,255,0.8) !important;
+	margin-bottom: 80px !important;
 }
 
-.table-responsive table{
+table{
 	margin-top: 10px;
+	background: #FFF;
 }
 
-.table-responsive table,.table-responsive table tr,.table-responsive table td,.table-responsive table th{
+table,tr,td,th{
 	border: none !important;
 	
 }
 
-.table-responsive table th{
+th{
 	background: rgba(0,0,0,0.8);
 	color: #FFF;
 	font-weight: bold;
@@ -198,4 +199,13 @@ section.wrapper{
 h2{
 	font-size: 200%;
 	margin-bottom: 5px;
+}
+
+td{
+	padding: 10px 0 !important;
+	padding-left: 0.5em !important;
+}
+
+.table-striped > tbody > tr:hover{
+	background: #ffddd6;
 }

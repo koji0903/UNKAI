@@ -1,4 +1,7 @@
 <%- model_class = User -%>
+
+<section class="wrapper">
+
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
@@ -35,3 +38,7 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_user_path,
             :class => 'btn btn-primary' %>
+
+
+</section>
+<!-- /.wrapper -->
