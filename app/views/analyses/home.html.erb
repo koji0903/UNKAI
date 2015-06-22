@@ -20,6 +20,51 @@
 	}
 %>
 
+<%= column_chart [
+	{ :name => "割合", :data => @rate_temperature }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の差（最高気温ー最低気温）の雲海発生割合",
+		:hAxis => {
+			:title => "気温差[℃]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
+		}
+	}
+%>
+
+<h2>降水量</h2>
+<%= column_chart [
+	{ :name => "全ての統計日", :data => @all_rainfall },
+	{ :name => "発生日前日", :data => @unkai_rainfall }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の降水量の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "降水量[mm]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
+	}
+%>
+
+<%= column_chart [
+	{ :name => "割合", :data => @rate_rainfall }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の降水量の雲海発生割合",
+		:hAxis => {
+			:title => "降水量[mm]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
+		}
+	}
+%>
+
+
 <h2>平均風速</h2>
 <%= column_chart [
 	{ :name => "全ての統計日", :data => @all_ave_wind_speed },
@@ -32,6 +77,19 @@
 		},
 		:vAxis => {
 			:title => "日数"
+		}
+	}
+%>
+<%= column_chart [
+	{ :name => "割合", :data => @rate_ave_wind_speed }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均風速の雲海発生割合",
+		:hAxis => {
+			:title => "風速[m/s]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
 		}
 	}
 %>
@@ -52,6 +110,20 @@
 		}
 	}
 %>
+<%= column_chart [
+	{ :name => "割合", :data => @rate_ave_stream_pressure }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均蒸気圧の雲海発生割合",
+		:hAxis => {
+			:title => "平均蒸気圧[hPa]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
+		}
+	}
+%>
+
 
 <h2>平均湿度</h2>
 <%= column_chart [
@@ -68,6 +140,20 @@
 		}
 	}
 %>
+<%= column_chart [
+	{ :name => "割合", :data => @rate_ave_humidity }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均湿度の雲海発生割合",
+		:hAxis => {
+			:title => "湿度[%]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
+		}
+	}
+%>
+
 
 <h2>最小相対湿度</h2>
 <%= column_chart [
@@ -84,11 +170,25 @@
 		}
 	}
 %>
+<%= column_chart [
+	{ :name => "割合", :data => @rate_min_humidity }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均相対湿度の雲海発生割合",
+		:hAxis => {
+			:title => "最小相対湿度[%]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
+		}
+	}
+%>
+
 
 <h2>平均現地気圧</h2>
 <%= column_chart [
 	{ :name => "全ての統計日", :data => @all_ave_pressure },
-	{ :name => "発生日前日", :data => @unkai_ave_pressure }
+	{ :name => "発生日前日", :data => @unkai_ave_pressure },
 	],
 	:library => {
 		:title => "2010年〜の阿蘇地点の平均現地気圧の日数分布[四捨五入]",
@@ -97,6 +197,19 @@
 		},
 		:vAxis => {
 			:title => "日数"
+		}
+	}
+%>
+<%= column_chart [
+	{ :name => "割合", :data => @rate_ave_pressure }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均蒸気圧の雲海発生割合",
+		:hAxis => {
+			:title => "平均現地気圧[hPa]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
 		}
 	}
 %>
