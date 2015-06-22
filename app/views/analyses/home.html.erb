@@ -4,7 +4,11 @@
 
 <h1>気象情報解析</h1>
 
-<%= column_chart @graph_data,
+<h2>気温差</h2>
+<%= column_chart [
+	{ :name => "全ての統計日", :data => @all_temperature },
+	{ :name => "発生日前日", :data => @unkai_temperature }
+	],
 	:library => {
 		:title => "2010年〜の阿蘇地点の差（最高気温ー最低気温）の日数分布[四捨五入]",
 		:hAxis => {
@@ -13,6 +17,21 @@
 		:vAxis => {
 			:title => "日数"
 		}
+	}
+%>
 
+<h2>湿度</h2>
+<%= column_chart [
+	{ :name => "全ての統計日", :data => @all_ave_humidity },
+	{ :name => "発生日前日", :data => @unkai_ave_humidity }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の湿度の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "湿度[%]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
 	}
 %>
