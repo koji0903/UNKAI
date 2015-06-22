@@ -1,0 +1,18 @@
+<% content_for :graph do %>
+	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<% end %>
+
+<h1>気象情報解析</h1>
+
+<%= column_chart @graph_data,
+	:library => {
+		:title => "2010年〜の阿蘇地点の差（最高気温ー最低気温）の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "気温差[℃]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
+
+	}
+%>
