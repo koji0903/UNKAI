@@ -20,7 +20,40 @@
 	}
 %>
 
-<h2>湿度</h2>
+<h2>平均風速</h2>
+<%= column_chart [
+	{ :name => "全ての統計日", :data => @all_ave_wind_speed },
+	{ :name => "発生日前日", :data => @unkai_ave_wind_speed }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均風速の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "風速[m/s]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
+	}
+%>
+
+
+<h2>平均蒸気圧</h2>
+<%= column_chart [
+	{ :name => "全ての統計日", :data => @all_ave_stream_pressure },
+	{ :name => "発生日前日", :data => @unkai_ave_stream_pressure }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均蒸気圧の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "平均蒸気圧[hPa]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
+	}
+%>
+
+<h2>平均湿度</h2>
 <%= column_chart [
 	{ :name => "全ての統計日", :data => @all_ave_humidity },
 	{ :name => "発生日前日", :data => @unkai_ave_humidity }
@@ -29,6 +62,38 @@
 		:title => "2010年〜の阿蘇地点の湿度の日数分布[四捨五入]",
 		:hAxis => {
 			:title => "湿度[%]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
+	}
+%>
+
+<h2>最小相対湿度</h2>
+<%= column_chart [
+	{ :name => "全ての統計日", :data => @all_min_humidity },
+	{ :name => "発生日前日", :data => @unkai_min_humidity }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の最小相対湿度の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "最小相対湿度[%]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
+	}
+%>
+
+<h2>平均現地気圧</h2>
+<%= column_chart [
+	{ :name => "全ての統計日", :data => @all_ave_pressure },
+	{ :name => "発生日前日", :data => @unkai_ave_pressure }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均現地気圧の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "平均現地気圧[hPa]"
 		},
 		:vAxis => {
 			:title => "日数"
