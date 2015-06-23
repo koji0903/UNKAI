@@ -37,7 +37,19 @@
 </ul>
 </div>
 
+<h2>検索</h2>
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :date_cont, "日付" %><%= f.date_field :date_cont %>
+  <%= f.label :ave_temperature_eq, "平均気温" %><%= f.search_field :ave_temperature_eq %>
+  <%= f.label :max_temperature_eq, "最高気温" %><%= f.search_field :max_temperature_eq %>
+
+  <%= f.submit %>
+<% end %>
+
+
 <h2>気象情報一覧</h2>
+
 <%= page_entries_info(@weathers) %>
       <div class="table-responsive">
 <table class="table table-striped table-bordered table-condensed">
@@ -45,26 +57,26 @@
     <tr>
       <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:area) %></th> -->
-      <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:ave_temperature) %></th>
-      <th><%= model_class.human_attribute_name(:max_temperature) %></th>
-      <th><%= model_class.human_attribute_name(:min_temperature) %></th>
-      <th><%= model_class.human_attribute_name(:rainfall) %></th>
+      <th><%= sort_link @q, :date, model_class.human_attribute_name(:date) %></th>
+      <th><%= sort_link @q, :ave_temperature, model_class.human_attribute_name(:ave_temperature) %></th>
+      <th><%= sort_link @q, :max_temperature, model_class.human_attribute_name(:max_temperature) %></th>
+      <th><%= sort_link @q, :min_temperature, model_class.human_attribute_name(:min_temperature) %></th>
+      <th><%= sort_link @q, :rainfall, model_class.human_attribute_name(:rainfall) %></th>
       <!-- <th><%= model_class.human_attribute_name(:max_rainfall) %></th> -->
-      <th><%= model_class.human_attribute_name(:day_length) %></th>
+      <th><%= sort_link @q, :day_length, model_class.human_attribute_name(:day_length) %></th>
       <!-- <th><%= model_class.human_attribute_name(:insolation) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:max_snow) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:total_snow) %></th> -->
-      <th><%= model_class.human_attribute_name(:ave_wind_speed) %></th>
-      <th><%= model_class.human_attribute_name(:max_wind_speed) %></th>
-      <th><%= model_class.human_attribute_name(:max_wind_direction) %></th>
+      <th><%= sort_link @q, :ave_wind_speed, model_class.human_attribute_name(:ave_wind_speed) %></th>
+      <th><%= sort_link @q, :max_wind_speed, model_class.human_attribute_name(:max_wind_speed) %></th>
+      <th><%= sort_link @q, :max_wind_direction, model_class.human_attribute_name(:max_wind_direction) %></th>
       <!-- <th><%= model_class.human_attribute_name(:momentary_wind_speed) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:momentary_wind_direction) %></th> -->
-      <th><%= model_class.human_attribute_name(:most_direction) %></th>
-      <th><%= model_class.human_attribute_name(:ave_stream_pressure) %></th>
-      <th><%= model_class.human_attribute_name(:ave_humidity) %></th>
-      <th><%= model_class.human_attribute_name(:min_himidity) %></th>
-      <th><%= model_class.human_attribute_name(:ave_pressure) %></th>
+      <th><%= sort_link @q, :most_direction, model_class.human_attribute_name(:most_direction) %></th>
+      <th><%= sort_link @q, :ave_stream_pressure, model_class.human_attribute_name(:ave_stream_pressure) %></th>
+      <th><%= sort_link @q, :ave_humidity, model_class.human_attribute_name(:ave_humidity) %></th>
+      <th><%= sort_link @q, :min_himidity, model_class.human_attribute_name(:min_himidity) %></th>
+      <th><%= sort_link @q, :ave_pressure, model_class.human_attribute_name(:ave_pressure) %></th>
       <!-- <th><%= model_class.human_attribute_name(:ave_sea_pressure) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:min_sea_pressure) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:ave_cloud_amount) %></th> -->

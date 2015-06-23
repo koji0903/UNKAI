@@ -5,7 +5,10 @@ class WeathersController < ApplicationController
   # GET /weathers.json
   def index
 #    @weathers = Weather.all
-    @weathers = Weather.page(params[:page]).order("date")
+    @q = Weather.search(params[:q])
+    @weathers = @q.result.page(params[:page])
+    #order("date")
+#    @weathers = Weather.page(params[:page]).order("date")
 #    @weathers = Weather.order("date")
   end
 

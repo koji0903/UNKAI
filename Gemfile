@@ -78,4 +78,7 @@ group :development, :test do
   gem 'pry-stack_explorer' # スタックをたどれる
 end
 
+# Search
+gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4.2"
+gem "polyamorous", :github => "activerecord-hackery/polyamorous"
 

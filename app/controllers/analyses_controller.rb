@@ -1,4 +1,6 @@
 class AnalysesController < ApplicationController
+  require 'csv'
+
 	before_action :get_unkai_pre_date, only: [:home]
 
   def home
@@ -12,7 +14,7 @@ class AnalysesController < ApplicationController
   	# 気温差
   	@all_temperature = all_Weather_temperature
   	@unkai_temperature = unkai_Weather_temperature
- 	@rate_temperature = cal_rate(@all_temperature,@unkai_temperature)
+    @rate_temperature = cal_rate(@all_temperature,@unkai_temperature)
 
  # 	@item = unkai_Weather_temperature[1]
 

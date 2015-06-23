@@ -1,3 +1,22 @@
+GIT
+  remote: git://github.com/activerecord-hackery/polyamorous.git
+  revision: 6e2e1cc5d0b53e4d8f02aa5286e6d11aa91f5ac3
+  specs:
+    polyamorous (1.2.0)
+      activerecord (>= 3.0)
+
+GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: bcce3a0d96789c656e1cad7e58f1da348f745a13
+  branch: rails-4.2
+  specs:
+    ransack (1.2.4)
+      actionpack (~> 4.2.0)
+      activerecord (~> 4.2.0)
+      activesupport (~> 4.2.0)
+      i18n
+      polyamorous (~> 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -217,10 +236,12 @@ DEPENDENCIES
   less-rails
   mini_magick (= 3.8.0)
   momentjs-rails
+  polyamorous!
   pry-doc
   pry-rails
   pry-stack_explorer
   rails (= 4.2.1)
+  ransack!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
