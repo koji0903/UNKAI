@@ -254,19 +254,19 @@ class AnalysesController < ApplicationController
   def get_0_8_MinTemp
   	from = Time.new(2000,1,1,0,0,0,0)
   	to = from + 8*60*60
-  	WeatherHours.where(:t_time => from...to).group(:date).minimum(:temperature)
+  	WeatherHour.where(:t_time => from...to).group(:date).minimum(:temperature)
   end
 
   def get_0_8_AveWindSpeed
   	from = Time.new(2000,1,1,0,0,0,0)
   	to = from + 8*60*60
-  	WeatherHours.where(:t_time => from...to).group(:date).average(:wind_speed)
+  	WeatherHour.where(:t_time => from...to).group(:date).average(:wind_speed)
   end
 
   def get_0_8_UnkaiAveWindSpeed
   	from = Time.new(2000,1,1,0,0,0,0)
   	to = from + 8*60*60
-  	WeatherHours.where(:date => @unkai_pre_days, :t_time => from...to).group(:date).average(:wind_speed)
+  	WeatherHour.where(:date => @unkai_pre_days, :t_time => from...to).group(:date).average(:wind_speed)
   end
 
 
