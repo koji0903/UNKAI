@@ -77,6 +77,7 @@
       <th><%= sort_link @q, :ave_humidity, model_class.human_attribute_name(:ave_humidity) %></th>
       <th><%= sort_link @q, :min_himidity, model_class.human_attribute_name(:min_himidity) %></th>
       <th><%= sort_link @q, :ave_pressure, model_class.human_attribute_name(:ave_pressure) %></th>
+      <th><%= '雲海' %></th>
       <!-- <th><%= model_class.human_attribute_name(:ave_sea_pressure) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:min_sea_pressure) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:ave_cloud_amount) %></th> -->
@@ -111,6 +112,7 @@
         <td><%= weather.ave_humidity %></td>
         <td><%= weather.min_himidity %></td>
         <td><%= weather.ave_pressure %></td>
+        <td><%= weather.get_Unkkai(weather.date) %></td>
         <!-- <td><%= weather.ave_sea_pressure %></td> -->
         <!-- <td><%= weather.min_sea_pressure %></td> -->
         <!-- <td><%= weather.ave_cloud_amount %></td> -->

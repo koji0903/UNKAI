@@ -234,7 +234,7 @@ ja:
         date: 撮影日
         unkai_photo: 写真
       weather_hour:
-        date_time: 日付
+        date: 日付
         t_time: 時間
         temperature: 気温
         wind_speed: 風速
