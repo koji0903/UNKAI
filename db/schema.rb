@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618063243) do
+ActiveRecord::Schema.define(version: 20150622051233) do
 
   create_table "unkai_photos", force: :cascade do |t|
     t.text     "comment"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150618063243) do
     t.float    "stream_pressure"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.time     "t_time"
   end
 
   add_index "weather_hours", ["area", "date", "date_time"], name: "index_weather_hours_on_area_and_date_and_date_time", unique: true

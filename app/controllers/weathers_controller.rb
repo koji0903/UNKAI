@@ -84,6 +84,7 @@ class WeathersController < ApplicationController
         @weather_hours = WeatherHours.new(
            :area => w.area,
            :date => line[0].split[0],
+           :t_time => line[0].split[1],
            :date_time => line[0],
            :temperature => line[1],
            :wind_speed => line[4],

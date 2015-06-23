@@ -4,13 +4,45 @@
 
 <h1>気象情報解析</h1>
 
+
+<h2>平均風速（0時〜8時）</h2>
+<%= column_chart [
+	{ :name => "全期間", :data => @all_ave_wind_speed },
+	{ :name => "発生日", :data => @unkai_ave_wind_speed }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均風速の日数分布[四捨五入]",
+		:hAxis => {
+			:title => "風速[m/s]"
+		},
+		:vAxis => {
+			:title => "日数"
+		}
+	}
+%>
+<%= column_chart [
+	{ :name => "発生確認割合", :data => @rate_ave_wind_speed }
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の平均風速の雲海発生割合",
+		:hAxis => {
+			:title => "風速[m/s]"
+		},
+		:vAxis => {
+			:title => "割合[%]"
+		}
+	}
+%>
+
+
+
 <h2>気温差</h2>
 <%= column_chart [
 	{ :name => "全ての統計日", :data => @all_temperature },
 	{ :name => "発生日前日", :data => @unkai_temperature }
 	],
 	:library => {
-		:title => "2010年〜の阿蘇地点の差（最高気温ー最低気温）の日数分布[四捨五入]",
+		:title => "2010年〜の阿蘇地点の差（最高気温[前日]ー最低気温[当日の朝8時まで]）の日数分布[四捨五入]",
 		:hAxis => {
 			:title => "気温差[℃]"
 		},
@@ -24,7 +56,7 @@
 	{ :name => "割合", :data => @rate_temperature }
 	],
 	:library => {
-		:title => "2010年〜の阿蘇地点の差（最高気温ー最低気温）の雲海発生割合",
+		:title => "2010年〜の阿蘇地点の差（最高気温[前日]ー最低気温[当日の朝8時まで]）の雲海発生割合",
 		:hAxis => {
 			:title => "気温差[℃]"
 		},
@@ -64,35 +96,6 @@
 	}
 %>
 
-
-<h2>平均風速</h2>
-<%= column_chart [
-	{ :name => "全ての統計日", :data => @all_ave_wind_speed },
-	{ :name => "発生日前日", :data => @unkai_ave_wind_speed }
-	],
-	:library => {
-		:title => "2010年〜の阿蘇地点の平均風速の日数分布[四捨五入]",
-		:hAxis => {
-			:title => "風速[m/s]"
-		},
-		:vAxis => {
-			:title => "日数"
-		}
-	}
-%>
-<%= column_chart [
-	{ :name => "割合", :data => @rate_ave_wind_speed }
-	],
-	:library => {
-		:title => "2010年〜の阿蘇地点の平均風速の雲海発生割合",
-		:hAxis => {
-			:title => "風速[m/s]"
-		},
-		:vAxis => {
-			:title => "割合[%]"
-		}
-	}
-%>
 
 
 <h2>平均蒸気圧</h2>

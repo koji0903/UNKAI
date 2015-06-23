@@ -3,20 +3,24 @@ class AnalysesController < ApplicationController
 
   def home
 
+  	# 平均風速
+  	@all_ave_wind_speed = all_Weather_ave_wind_speed
+  	@unkai_ave_wind_speed = unkai_Weather_ave_wind_speed
+  	@rate_ave_wind_speed = cal_rate(@all_ave_wind_speed,@unkai_ave_wind_speed)
+
+
   	# 気温差
   	@all_temperature = all_Weather_temperature
   	@unkai_temperature = unkai_Weather_temperature
-  	@rate_temperature = cal_rate(@all_temperature,@unkai_temperature)
+ 	@rate_temperature = cal_rate(@all_temperature,@unkai_temperature)
+
+ # 	@item = unkai_Weather_temperature[1]
 
   	# 降水量
   	@all_rainfall = all_Weather_rainfall
   	@unkai_rainfall = unkai_Weather_rainfall
   	@rate_rainfall = cal_rate(@all_rainfall,@unkai_rainfall)
 
-  	# 平均風速
-  	@all_ave_wind_speed = all_Weather_ave_wind_speed
-  	@unkai_ave_wind_speed = unkai_Weather_ave_wind_speed
-  	@rate_ave_wind_speed = cal_rate(@all_ave_wind_speed,@unkai_ave_wind_speed)
 
   	# 平均蒸気圧
   	@all_ave_stream_pressure = all_Weather_ave_stream_pressure
@@ -41,30 +45,58 @@ class AnalysesController < ApplicationController
   end
 
   private
+
+  #
+  # 平均風速
+  #
+  # 全ての日の気象情報（平均風速）を取得
+  def all_Weather_ave_wind_speed
+  	cal_diff_today(get_0_8_AveWindSpeed)
+  end
+
+  # 雲海出た前日の気象情報（平均風速）を取得
+  def unkai_Weather_ave_wind_speed
+  	# 気象情報を取得
+  	cal_diff_today(get_0_8_UnkaiAveWindSpeed)
+  end
+
+
+
+
   # 全ての日の気象情報（平均気温）を取得
   def all_Weather_temperature
-  	cal_diff_temperature(Weather.select([:max_temperature,:min_temperature]))
+  	cal_diff_temperature(Weather.select(:date,:max_temperature))
   end
 
   # 雲海出た前日の気象情報（平均気温）を取得
   def unkai_Weather_temperature
   	# 気象情報を取得
-  	cal_diff_temperature(Weather.where(:date => @unkai_pre_days).select([:max_temperature,:min_temperature]))
+  	cal_diff_temperature(Weather.where(:date => @unkai_pre_days).select([:date,:max_temperature]))
   end
 
   def cal_diff_temperature(weather)
   	data = Hash.new
+#  	date2 = Hash.new
+	# 当日0-8時までの最低気温
+  	min_data = get_0_8_MinTemp
   	weather.each do |item|
-  		next if item.max_temperature.nil? || item.min_temperature.nil?
-  		temp = (item.max_temperature - item.min_temperature).round
+  		next if item.max_temperature.nil? || item.date.nil?
+  		# 前日の最高気温
+  		max_temp = item.max_temperature
+  		# 前日データで計算しているので、当日に変更
+  		t_date = item.date + 1
+  		min_temp = min_data[t_date]
+  		# 前日の最高気温　- 当日8時までの最低気温
+  		temp = (max_temp - min_temp).round
   		if data.has_key?(temp) then
   			no = data[temp] + 1
   			data[temp] = no
   		else
   			data[temp] = 1
   		end
+#  		date2[item.date] = [item.max_temperature,min_temp]
   	end
-  	data.sort
+  	return data.sort
   end
 
   # 全ての日の気象情報（降水量）を取得
@@ -76,17 +108,6 @@ class AnalysesController < ApplicationController
   def unkai_Weather_rainfall
   	# 気象情報を取得
   	cal_diff2(Weather.where(:date => @unkai_pre_days).pluck(:rainfall))
-  end
-
-  # 全ての日の気象情報（平均風速）を取得
-  def all_Weather_ave_wind_speed
-  	cal_diff(Weather.pluck(:ave_wind_speed))
-  end
-
-  # 雲海出た前日の気象情報（平均風速）を取得
-  def unkai_Weather_ave_wind_speed
-  	# 気象情報を取得
-  	cal_diff(Weather.where(:date => @unkai_pre_days).pluck(:ave_wind_speed))
   end
 
   # 全ての日の気象情報（平均蒸気圧）を取得
@@ -135,11 +156,18 @@ class AnalysesController < ApplicationController
   end
 
 
-  def cal_diff(weather)
+  def cal_diff(weather,r_num=nil)
   	data = Hash.new
   	weather.each do |item|
   		next if item.nil?
-  		tmp = item.round
+
+  		tmp = 0
+  		if r_num.nil?
+	  		tmp = item.round
+	  	else
+	  		tmp = item.round(r_num)
+	  	end
+
   		if data.has_key?(tmp) then
   			no = data[tmp] + 1
   			data[tmp] = no
@@ -149,6 +177,29 @@ class AnalysesController < ApplicationController
   	end
   	data.sort
   end
+
+  def cal_diff_today(weather,r_num=nil)
+  	data = Hash.new
+  	weather.each do |key,item|
+  		next if item.nil?
+
+  		tmp = 0
+  		if r_num.nil?
+	  		tmp = item.round
+	  	else
+	  		tmp = item.round(r_num)
+	  	end
+
+  		if data.has_key?(tmp) then
+  			no = data[tmp] + 1
+  			data[tmp] = no
+  		else
+  			data[tmp] = 1
+  		end
+  	end
+  	data.sort
+  end
+
 
   # ひとけた目を丸め
   def cal_diff2(weather)
@@ -197,4 +248,24 @@ class AnalysesController < ApplicationController
   	# 前日に切り替え
   	@unkai_pre_days.map!{|day| day-1 }
   end
+
+  def get_0_8_MinTemp
+  	from = Time.new(2000,1,1,0,0,0,0)
+  	to = from + 8*60*60
+  	WeatherHours.where(:t_time => from...to).group(:date).minimum(:temperature)
+  end
+
+  def get_0_8_AveWindSpeed
+  	from = Time.new(2000,1,1,0,0,0,0)
+  	to = from + 8*60*60
+  	WeatherHours.where(:t_time => from...to).group(:date).average(:wind_speed)
+  end
+
+  def get_0_8_UnkaiAveWindSpeed
+  	from = Time.new(2000,1,1,0,0,0,0)
+  	to = from + 8*60*60
+  	WeatherHours.where(:date => @unkai_pre_days, :t_time => from...to).group(:date).average(:wind_speed)
+  end
+
+
 end
