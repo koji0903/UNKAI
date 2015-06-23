@@ -1,0 +1,36 @@
+<%= simple_form_for @weather_hour, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :area %>
+  <%= error_span(@weather_hour[:area]) %>
+  <%= f.input :date %>
+  <%= error_span(@weather_hour[:date]) %>
+  <%= f.input :date_time %>
+  <%= error_span(@weather_hour[:date_time]) %>
+  <%= f.input :t_time %>
+  <%= error_span(@weather_hour[:t_time]) %>
+  <%= f.input :temperature %>
+  <%= error_span(@weather_hour[:temperature]) %>
+  <%= f.input :wind_speed %>
+  <%= error_span(@weather_hour[:wind_speed]) %>
+  <%= f.input :wind_direction %>
+  <%= error_span(@weather_hour[:wind_direction]) %>
+  <%= f.input :railfall %>
+  <%= error_span(@weather_hour[:railfall]) %>
+  <%= f.input :snow %>
+  <%= error_span(@weather_hour[:snow]) %>
+  <%= f.input :day_length %>
+  <%= error_span(@weather_hour[:day_length]) %>
+  <%= f.input :insolation %>
+  <%= error_span(@weather_hour[:insolation]) %>
+  <%= f.input :pressure %>
+  <%= error_span(@weather_hour[:pressure]) %>
+  <%= f.input :sea_pressure %>
+  <%= error_span(@weather_hour[:sea_pressure]) %>
+  <%= f.input :humidity %>
+  <%= error_span(@weather_hour[:humidity]) %>
+  <%= f.input :stream_pressure %>
+  <%= error_span(@weather_hour[:stream_pressure]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                weathers_path, :class => 'btn btn-default' %>
+<% end %>

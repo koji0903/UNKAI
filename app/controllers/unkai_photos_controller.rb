@@ -149,7 +149,7 @@ class UnkaiPhotosController < ApplicationController
     def get_HourlyReport
       id = params[:id]
       date = UnkaiPhoto.find_by(id: id).date
-      return WeatherHours.where( date: [date-1,date] ).order('date, date_time').limit(34)
+      return WeatherHour.where( date: [date-1,date] ).order('date, date_time').limit(34)
     end
 
     def get_param_date(param)

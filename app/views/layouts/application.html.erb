@@ -48,7 +48,8 @@
         <p class="navbar-brand"><%= link_to "雲海予想", root_path  %></p>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "過去の気象情報", weathers_path  %></li>
+            <li><%= link_to "気象情報（日単位）", weathers_path  %></li>
+            <li><%= link_to "気象情報（時間単位）", weather_hours_path  %></li>
             <li><%= link_to "雲海ギャラリー", unkai_photos_path  %></li>
             <li><%= link_to "ユーザー", users_path  %></li>
             <li><%= link_to "解析", analyses_home_path  %></li>

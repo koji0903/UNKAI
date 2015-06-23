@@ -197,6 +197,7 @@ ja:
       user: ユーザー
       weather: 気象情報
       unkai_photo: 雲海ギャラリー
+      weather_hour: 気象情報（時間単位）
     attributes:
       user:
         name: 名前
@@ -232,6 +233,20 @@ ja:
         comment: コメント
         date: 撮影日
         unkai_photo: 写真
+      weather_hour:
+        date_time: 日付
+        t_time: 時間
+        temperature: 気温
+        wind_speed: 風速
+        wind_direction: 風向
+        railfall: 降水量
+        snow: 積雪
+        day_length: 日照時間
+        insolation: 日射量
+        pressure: 現地気圧
+        sea_pressure: 海面気圧
+        humidity: 相対湿度
+        stream_pressure: 蒸気圧
   site_title: 雲海予報
   views:
     pagination:

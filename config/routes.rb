@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'top#index'
 
   resources :weathers
+  resources :weather_hours
   resources :users
   get 'static_pages/home'
 
