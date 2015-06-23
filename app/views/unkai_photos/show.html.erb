@@ -8,6 +8,18 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<nav class="pagenation">
+<% if @unkai_photo.next.present?  %>
+  <%= link_to "次のデータ &rarr;".html_safe, @unkai_photo.next, :class => "new"  %>
+<% end %>
+<% if @unkai_photo.previous.present? %>
+  <%= link_to "&larr; 前のデータ".html_safe, @unkai_photo.previous, :class => "old" %>
+<% end %>
+</nav>
+
+</br>
+</br>
+
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:unkai_photo) %>:</strong></dt>
   <dd>
@@ -26,6 +38,18 @@
 
 </dl>
 
+<%= line_chart @wind_speed,
+  :library => {
+    :title => "前日〜当日（９時）までの風速の変化",
+    :hAxis => {
+      :title => "時間"
+    },
+    :vAxis => {
+      :title => "風速[m/s]"
+    },
+  }
+%>
+
 
 <%= line_chart @temperature,
   :library => {
@@ -39,17 +63,6 @@
   }
 %>
 
-<%= line_chart @wind_speed,
-  :library => {
-    :title => "前日〜当日（９時）までの風速の変化",
-    :hAxis => {
-      :title => "時間"
-    },
-    :vAxis => {
-      :title => "風速[m/s]"
-    },
-  }
-%>
 
 
 <%= line_chart @railfall,
@@ -244,6 +257,16 @@
 </table>
 
 <br>
+<nav class="pagenation">
+<% if @unkai_photo.next.present?  %>
+  <%= link_to "次のデータ &rarr;".html_safe, @unkai_photo.next, :class => "new"  %>
+<% end %>
+<% if @unkai_photo.previous.present? %>
+  <%= link_to "&larr; 前のデータ".html_safe, @unkai_photo.previous, :class => "old" %>
+<% end %>
+</nav>
+</br>
+</br>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               unkai_photos_path, :class => 'btn btn-default'  %>
