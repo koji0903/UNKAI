@@ -39,6 +39,7 @@
 </dl>
 
 <%= line_chart @wind_speed,
+  :max => 10,
   :library => {
     :title => "前日〜当日（９時）までの風速の変化",
     :hAxis => {
@@ -52,6 +53,7 @@
 
 
 <%= line_chart @temperature,
+  :max => 30,
   :library => {
     :title => "前日〜当日（９時）までの時間後毎気温の変化",
     :hAxis => {
