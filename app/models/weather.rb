@@ -7,7 +7,13 @@ class Weather < ActiveRecord::Base
 
 
   def get_Unkkai(date)
+  	flag = ""
   	a = UnkaiPhoto.find_by_date(date)
-  	a.id unless a.nil?
+  	flag = a.id unless a.nil?
+  	a = UnkaiPhoto.find_by_date(date+1)
+  	flag = "T" unless a.nil?
+  	a = UnkaiPhoto.find_by_date(date+2)
+  	flag = "DT" unless a.nil?
+  	flag
   end
 end
