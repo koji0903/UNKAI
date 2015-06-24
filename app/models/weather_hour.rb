@@ -8,11 +8,11 @@ class WeatherHour < ActiveRecord::Base
   def get_Unkai(date)
   	flag = ""
   	a = UnkaiPhoto.find_by_date(date)
-  	flag = a.id unless a.nil?
+  	flag = a.id.to_i unless a.nil?
   	a = UnkaiPhoto.find_by_date(date+1)
-  	flag = "T" unless a.nil?
+  	flag = "明日出る！" unless a.nil?
   	a = UnkaiPhoto.find_by_date(date+2)
-  	flag = "DT" unless a.nil?
+  	flag = "明後日出る！" unless a.nil?
   	flag
   end
 

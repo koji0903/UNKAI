@@ -112,7 +112,11 @@
         <td><%= weather.ave_humidity %></td>
         <td><%= weather.min_himidity %></td>
         <td><%= weather.ave_pressure %></td>
-        <td><%= weather.get_Unkkai(weather.date) %></td>
+        <% if weather.get_Unkai(weather.date).is_a?(Integer) %>
+          <td><%= link_to "出た！", unkai_photo_path(weather.get_Unkai(weather.date)), :class => 'btn btn-xs btn-danger' %></td>
+        <% else %>
+          <td><%= weather.get_Unkai(weather.date) %></td>
+        <% end %>
         <!-- <td><%= weather.ave_sea_pressure %></td> -->
         <!-- <td><%= weather.min_sea_pressure %></td> -->
         <!-- <td><%= weather.ave_cloud_amount %></td> -->

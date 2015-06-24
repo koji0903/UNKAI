@@ -53,7 +53,11 @@
         <td><%= weather_hour.sea_pressure %></td>
         <td><%= weather_hour.humidity %></td>
         <td><%= weather_hour.stream_pressure %></td>
-        <td><%= weather_hour.get_Unkai(weather_hour.date) %></td>
+        <% if weather_hour.get_Unkai(weather_hour.date).is_a?(Integer) %>
+          <td><%= link_to "出た！", unkai_photo_path(weather_hour.get_Unkai(weather_hour.date)), :class => 'btn btn-xs btn-danger' %></td>
+        <% else %>
+          <td><%= weather_hour.get_Unkai(weather_hour.date) %></td>
+        <% end %>
 <!--         <td><%= link_to 'Show', weather_hour %></td>
         <td><%= link_to 'Edit', edit_weather_hour_path(weather_hour) %></td>
         <td><%= link_to 'Destroy', weather_hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>

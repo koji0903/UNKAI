@@ -6,7 +6,6 @@
 #
 #  CSV  ファイル：nkf -w -Lu --overwrite *.csv
 module WeathersHelper
-
 	require 'csv'
 	require 'kconv'
 
