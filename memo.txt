@@ -1,0 +1,6 @@
+Yahoo Application ID
+dj0zaiZpPWZnc3pnV3R4aVl4UyZzPWNvbnN1bWVyc2VjcmV0Jng9ZGM-
+
+http://weather.olp.yahooapis.jp/v1/place?appid=dj0zaiZpPWZnc3pnV3R4aVl4UyZzPWNvbnN1bWVyc2VjcmV0Jng9ZGM-&coordinates=132,53&output=json
+
+http://weather.olp.yahooapis.jp/v1/place?appid=dj0zaiZpPWZnc3pnV3R4aVl4UyZzPWNvbnN1bWVyc2VjcmV0Jng9ZGM-&coordinates=131.044,32.528&output=json

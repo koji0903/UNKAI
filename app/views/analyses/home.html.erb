@@ -5,6 +5,21 @@
 
 <h1>気象情報解析</h1>
 
+<h2>雲海発生月</h2>
+<%= column_chart [
+	{ :name => "発生月", :data => @unkai_month },
+	],
+	:library => {
+		:title => "2010年〜の阿蘇地点の雲海発生月の日数",
+		:hAxis => {
+			:title => "月"
+		},
+		:vAxis => {
+			:title => "回数"
+		}
+	}
+%>
+
 
 <h2>平均風速（0時〜8時）</h2>
 <%= column_chart [

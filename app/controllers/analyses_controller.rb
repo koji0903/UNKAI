@@ -1,9 +1,14 @@
 class AnalysesController < ApplicationController
   require 'csv'
 
+  before_action :get_UnkaiDays, only: [:home]
 	before_action :get_unkai_pre_date, only: [:home]
 
+
   def home
+
+    # 雲海が出た日
+    @unkai_month = getUnkaiMonth
 
   	# 平均風速
   	@all_ave_wind_speed = all_Weather_ave_wind_speed
@@ -241,14 +246,12 @@ class AnalysesController < ApplicationController
 
   def get_UnkaiDays
   	# 雲海が出た日を配列で取得
-  	days = UnkaiPhoto.pluck(:date).sort.uniq
+  	@unkai_days = UnkaiPhoto.pluck(:date).sort.uniq
   end
 
   def get_unkai_pre_date
-  	  	# 雲海が出た日を取得
-  	@unkai_pre_days = get_UnkaiDays
   	# 前日に切り替え
-  	@unkai_pre_days.map!{|day| day-1 }
+  	@unkai_pre_days = @unkai_days.map{|day| day-1 }
   end
 
   def get_0_8_MinTemp
@@ -269,6 +272,29 @@ class AnalysesController < ApplicationController
   	WeatherHour.where(:date => @unkai_pre_days, :t_time => from...to).group(:date).average(:wind_speed)
   end
 
+  def getUnkaiMonth
+    unkai_month = {
+      "1" => 0,
+      "2" => 0,
+      "3" => 0,
+      "4" => 0,
+      "5" => 0,
+      "6" => 0,
+      "7" => 0,
+      "8" => 0,
+      "9" => 0,
+      "10" => 0,
+      "11" => 0,
+      "12" => 0
+    }
+    @unkai_days.each do |item|
+      month = item.to_s.split("-")[1].to_i.to_s
+      num = unkai_month[month]
+      num += 1
+      unkai_month[month] = num
+    end
+    unkai_month.sort
+  end
 
 
 end
