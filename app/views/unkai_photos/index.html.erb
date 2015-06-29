@@ -13,6 +13,7 @@
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:unkai_photo) %></th>
       <th><%= model_class.human_attribute_name(:comment) %></th>
+      <th><%= model_class.human_attribute_name(:photo_time) %></th>
       <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:image) %></th> -->
       <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
@@ -31,6 +32,7 @@
         <td><%= unkai_photo.comment %></td>
         <!-- <td><%= unkai_photo.image %></td> -->
         <!-- <td><%=l unkai_photo.created_at %></td> -->
+        <td><%= unkai_photo.photo_time %></td>
         <td>
           <%= link_to "詳細", unkai_photo_path(unkai_photo), :class => 'btn btn-default btn-xs'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

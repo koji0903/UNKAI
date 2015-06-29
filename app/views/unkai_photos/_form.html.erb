@@ -3,6 +3,8 @@
   <%= error_span(@unkai_photo[:image]) %>
   <%= f.input :comment %>
   <%= error_span(@unkai_photo[:comment]) %>
+  <%= f.input :photo_time %>
+  <%= error_span(@unkai_photo[:photo_time]) %>
   <%= f.input :date, as: :string, input_html: { class: "datepicker", value: Date.today } %>
   <!-- <%= f.input :date %> -->
   <%= error_span(@unkai_photo[:date]) %>

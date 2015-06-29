@@ -6,7 +6,7 @@ class WeathersController < ApplicationController
   def index
 #    @weathers = Weather.all
     @q = Weather.search(params[:q])
-    @weathers = @q.result.page(params[:page])
+    @weathers = @q.result.page(params[:page]).order("date")
     #order("date")
 #    @weathers = Weather.page(params[:page]).order("date")
 #    @weathers = Weather.order("date")
@@ -84,7 +84,7 @@ class WeathersController < ApplicationController
 
     @weather_data.each do |w|
       w.data.each do |line|
-        @weather_hours = WeatherHours.new(
+        @weather_hours = WeatherHour.new(
            :area => w.area,
            :date => line[0].split[0],
            :t_time => line[0].split[1],
